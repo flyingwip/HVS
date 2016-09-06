@@ -1,0 +1,55 @@
+
+
+//hide the
+
+.logo{
+	
+	height: 50px;
+	//background: url('../images/temp_logo_xs.png') no-repeat center center fixed;
+	background: url('../images/temp_logo_xs.png') no-repeat  50%;
+
+	
+	@media (min-width: $screen-sm-min) { 
+		height: 70px;
+		background: url('../images/temp_logo.png') no-repeat  50%;
+	}
+}	
+
+
+.hvs-header{
+
+	background: url('http://www.hofvansaksen.nl/~/media/images/parken/hsn/1280x430/hsn_resort_01_47212_1280x430px.jpg') no-repeat center center scroll;
+    -webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+    
+  	//padding: 100px 0;
+  	padding-top: 5%;
+  	padding-bottom: 5%;
+    text-align: center;
+
+}
+
+
+//hide on the invitation on the home page
+.home{ 
+	.hvs-header{
+		display: none;
+		@media (min-width: $screen-sm-min) { 
+			display: block;
+		}
+	}
+
+	.inivitation{
+		visibility: hidden;
+	}		
+}
+
+			
+
+
+
+
+
+

@@ -1,5 +1,18 @@
 <header class="banner">
-  <div class="container">
+
+  <a href="/">
+    <header class="container-fluid logo">
+    </header>
+</a>    
+
+ <div class="container-fluid hvs-header">
+        <div class="inivitation">
+       <!-- 160x100 -->
+          <img class="img-center" src="<?php echo get_template_directory_uri(); ?>/dist/images/temp_invitation.png" width="240px" height="150px" alt="">
+        </div>
+ </div>
+
+  <!-- <div class="container">
     <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
     <nav class="nav-primary">
       <?php
@@ -8,5 +21,5 @@
       endif;
       ?>
     </nav>
-  </div>
+  </div> -->
 </header>

@@ -5,4 +5,58 @@
 	margin-bottom: -5px;
 }
 
+//ontbijt uitwaaien treatment dinner
+.inivitation {
+
+	width: 280px;
+	height:150px;
+	margin-left: auto;
+	margin-right: auto;
+	//background-color: olive;
+	position: relative;
+	//top:-66px;
+	//pointer-events: none;
+
+	//ontbijt uitwaaien treatment dinner
+	label{
+		z-index: 10;
+		font-family: 'jennasue';
+		color: #FFF;
+		position: absolute;
+	    font-size: 19px;
+	    left: 180px;
+	}
+
+	//ontbijt uitwaaien treatment dinner
+	//
+	.ontvanger{
+	    top: 33px;
+	    z-index: 20;
+	}
+
+	//ontbijt uitwaaien treatment dinner
+	.type{
+		font-family: 'myriadpro-regular';
+		font-size: 11px;
+		background-color: $brand-primary;
+
+		
+    	width: 84px;
+    	text-align: left;
+    	top: 61px;
+	}
+
+	.afzender{
+	    top: 106px;
+
+	}
+
+
+	img{
+		//max-width: 100%;
+		width: 280px ;
+		height:150px;
+	}
+}
+
 

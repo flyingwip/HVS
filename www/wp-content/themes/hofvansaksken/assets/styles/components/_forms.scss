@@ -50,6 +50,20 @@ form  img{
   padding-bottom: 1%
 }
 
+.warning{
+  border:1px solid red !important;
+
+}
+
+.disabled{
+  pointer-events:none;
+  opacity: .5;
+}
+
+.enabled{
+  pointer-events:mouse;
+  opacity: 1;
+}
 
 
 

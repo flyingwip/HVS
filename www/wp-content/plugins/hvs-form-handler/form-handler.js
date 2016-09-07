@@ -1,6 +1,3 @@
-
-
-
 //jQuery( document ).on( 'click', '.love-button', function() {
 jQuery( document ).on( 'click', '.kies-je-hint', function() {
 

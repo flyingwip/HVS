@@ -1,7 +1,7 @@
 
 
-.home .kies-je-hint{
-	margin-top: -5px;
+.home .correction{
+	margin-top: -15px;
 	margin-bottom: -5px;
 }
 
@@ -12,10 +12,7 @@
 	height:150px;
 	margin-left: auto;
 	margin-right: auto;
-	//background-color: olive;
 	position: relative;
-	//top:-66px;
-	//pointer-events: none;
 
 	//ontbijt uitwaaien treatment dinner
 	label{
@@ -24,13 +21,13 @@
 		color: #FFF;
 		position: absolute;
 	    font-size: 19px;
-	    left: 180px;
+	    left: 150px;
 	}
 
 	//ontbijt uitwaaien treatment dinner
 	//
 	.ontvanger{
-	    top: 33px;
+	    top: 30px;
 	    z-index: 20;
 	}
 
@@ -39,18 +36,19 @@
 		font-family: 'myriadpro-regular';
 		font-size: 11px;
 		background-color: $brand-primary;
-
-		
-    	width: 84px;
+		width: 120px;
     	text-align: left;
-    	top: 61px;
+    	top: 62px;
 	}
 
 	.afzender{
-	    top: 106px;
-
+	    top: 93px;
 	}
 
+
+	.three_lines{
+		top: 105px;
+	}
 
 	img{
 		//max-width: 100%;
@@ -59,4 +57,7 @@
 	}
 }
 
+.home .content{
+	//margin-top: -12px;
+}
 

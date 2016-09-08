@@ -38,11 +38,11 @@
               }  
           });
     },
-    cloneInput: function($original, $target ) {
+    cloneInput: function($original, $target, leadingText ) {
         
           $original.keyup(function( event ) {
           //cloen the text
-          var input = "Hallo " + $original.val();
+          var input =  leadingText + ' ' +  $original.val();
           $target.text( input );
           //console.log(input.length);
         });
@@ -53,7 +53,8 @@
         if( !Hints.validEmail($target.val()) ){
           Hints.isnotValid($target);
         } else {
-          Hints.isValid($starget);
+          
+          Hints.isValid($target);
         } 
       });
 
@@ -71,12 +72,35 @@
       }
 
       if(condition==='email'){
+
         Hints.checkEmail($target);
         return true;
       }
 
-    },
+      //radio group that is rqeuired
+      if(condition==='required'){
+        //console.log($target);
+        Hints.checkRequired($target);
+        return true;
+      }
 
+
+
+    },
+    checkRequired: function($target) {
+
+        $target.change(function() {
+                    
+          if($target.is(':checked')){
+            $target.attr('has-validated',"true");  
+            
+          } else {
+            $target.attr('has-validated',"false");  
+          }
+          $(document).trigger('has-validated-changed');
+        });
+
+    },
     checkIfEmpty: function($target) {
         $($target).blur( function(event){
             if( Hints.isEmpty($target)  ){
@@ -112,7 +136,8 @@
       $(document).trigger('has-validated-changed');
 
       Hints.removeWarning($target);
-      console.log($target);
+
+      
     },
     addWarning: function($target) { 
        $target.addClass('warning'); 
@@ -134,7 +159,7 @@
         //var data = $('#contains-data').data('mydata');
         
         total_validations = $("input[has-validated='false']").length;
-        
+
         if(total_validations===0){
            Hints.enabled($target); 
         } else{
@@ -142,9 +167,6 @@
         } 
       });    
 
-      //console.log($target);
-      //console.log($("input[has-validated='false']").length);
-      //var n = $( "div" ).length;
 
     },
     disable: function( $target  ) { 
@@ -193,24 +215,41 @@
         //page has inpput with maxlength
         Hints.maxlengthIndicator($("input#ontvanger"));
         //add clone funtionality
-        Hints.cloneInput($("input#ontvanger"), $("label.ontvanger"));
+        Hints.cloneInput($("input#ontvanger"), $("label.ontvanger"), "Hallo");
         //add validation for input
         Hints.checkifValid($("input#ontvanger"),'empty');
         Hints.checkifValid($("input#email_ontvanger"),'empty');
-        Hints.checkifValid($("input#email_ontvanger"),'email');
         //add email validation
-        
-
+        Hints.checkifValid($("input#email_ontvanger"),'email');
+        //validate the form
         Hints.checkFormValid( $("button[type='submit']") );
 
 
-      }
+      },
+
     },
 
     // About us page, note the change from about-us to about_us.
-    'about_us': {
+    'form': {
       init: function() {
         // JavaScript to be fired on the about us page
+      },
+      finalize: function() {
+        
+        Hints.maxlengthIndicator($("input#voornaam"));
+        Hints.cloneInput($("input#voornaam"), $("label.afzender"), "Liefs");
+        Hints.checkifValid($("input#voornaam"),'empty');
+        Hints.checkifValid($("input#achternaam"),'empty');
+        Hints.checkifValid($("input#email"),'email');
+
+        //Hints.checkifValid( $("input[type=radio][name='geslacht']") ,'radio');
+        //Hints.checkifValid( $("input[type=checkbox][name='voorwaarden']") ,'required');
+        Hints.checkifValid( $("input#actievoorwaarden"),"required" );
+
+
+
+
+        Hints.checkFormValid( $("button[type='submit']") );
       }
     }
   };

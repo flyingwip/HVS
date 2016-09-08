@@ -3,15 +3,20 @@
 //hide the
 
 .logo{
-	
+	image-rendering: -webkit-optimize-contrast;
+	//image-rendering: crisp-edges;
+	//image-rendering: auto;
 	height: 50px;
 	//background: url('../images/temp_logo_xs.png') no-repeat center center fixed;
-	background: url('../images/temp_logo_xs.png') no-repeat  50%;
+	background: url('../images/temp_logo_xs_1_24.png') no-repeat 50% ;
+	background-size: cover;
+	background-size: 80px 40px;
+	//background: url('../images/temp_logo_xs.png') no-repeat  80px 40px;
 
 	
 	@media (min-width: $screen-sm-min) { 
 		height: 70px;
-		background: url('../images/temp_logo.png') no-repeat  50%;
+		background: url('../images/temp_logo_xs_2_51.png') no-repeat  50%;
 	}
 }	
 

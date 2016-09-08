@@ -24,6 +24,26 @@ input[type=radio]{
 	float: left;
 	margin-right: 3%;
 }
+//cortection on the form page
+.form{
+  input[type=radio]{
+    margin-top: 0px;
+  }
+
+  input[type=checkbox]{
+    margin-top: 2px;
+  }  
+}
+
+
+.home label{
+  line-height: 15px;
+}
+
+.home .form-group{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 
 label{
 	display: table-cell;
@@ -33,6 +53,7 @@ label{
 
 .form-group{
   margin: 0px;
+
 }
 
 
@@ -65,6 +86,28 @@ form  img{
   opacity: 1;
 }
 
+//specific form adjustmets
+.col-xs-8.col-sm-5.form-group{
+  padding-right: 2px;
+}
+
+
+.col-xs-4.col-sm-2.form-group{
+  padding-left: 2px;
+
+  /* Small devices (tablets, 768px and up) */
+  @media (min-width: $screen-sm-min) { 
+    padding-right: 2px; 
+  }
+  
+}
+
+.col-xs-12.col-sm-5.form-group {
+
+  @media (min-width: $screen-sm-min) { 
+    padding-left: 2px;
+  }
+}
 
 
 

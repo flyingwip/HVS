@@ -8,11 +8,50 @@
  <div class="container-fluid hvs-header">
   <div class="row">
         <div class="inivitation orange">
-          <label class="name ontvanger">Hallo </label>
-           <label class="type">Ik heb wel zin in een ontbijt op bed...</label>
+
+        <?php if ($_SESSION['ontvanger'] ): ?>
+           <label class="name ontvanger">Hallo <?php echo $_SESSION['ontvanger']; ?></label>
+        <?php else: ?>
+           <label class="name ontvanger">Hallo ...</label> 
+        <?php endif; ?> 
+
+          
+
+          <?php
+          $text = array(
+            'breakfast' => 'in een ontbijt op bed...' , 
+            'fiets' => 'om lekker uit te waaien op de fiets...' , 
+            'treatment' => 'in een ontspannende facial treatment...' , 
+            'dinner' => "in zo'n romantisch diner voor 2..." , 
+          );
+
+          $images = array(
+            'breakfast' => 'breakfast.png' , 
+            'fiets' => 'fiets.png' , 
+            'treatment' => 'treatment.png' , 
+            'dinner' => "dinner.png" 
+          );
+
+          $threelines = '';
+          if($_SESSION['hint']=='treatment'){
+             $threelines = 'three_lines'; 
+          }
+
+          ?>
+
+           <label class="type">Ik heb wel zin <?php echo $text[$_SESSION['hint']] ;?> </label>
           <!-- 160x100 -->
-          <img class="img-center" src="<?php echo get_template_directory_uri(); ?>/dist/images/invitation_mobile.png"  alt="">
-          <label class="name afzender">Liefs ...</label>
+
+
+          <img class="img-center" src="<?php echo get_template_directory_uri(); ?>/dist/images/<?php echo $images[$_SESSION['hint']] ;?>"  alt="">
+  
+          <?php if ($_SESSION['voornaam'] ): ?>
+             <label class="name afzender <?php echo $threelines;?>">Liefs <?php echo $_SESSION['voornaam']; ?></label>
+          <?php else: ?>
+             <label class="name afzender <?php echo $threelines;?>">Liefs ...</label>
+          <?php endif; ?> 
+
+          
         </div>
   </div>      
  </div>

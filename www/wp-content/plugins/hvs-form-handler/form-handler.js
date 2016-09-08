@@ -10,7 +10,7 @@ jQuery( document ).on( 'click', '.kies-je-hint', function() {
 		},
 		success : function( response ) {
 			//console.log(response);
-			location.href = response;
+			location.href = response ;
 			//jQuery('#love-count').html( response );
 		}
 	});
@@ -69,8 +69,8 @@ jQuery( document ).on( 'click', '.sluit-af', function() {
 			voorwaarden : voorwaarden,
 		},
 		success : function( response ) {
-			console.log(response);
-			//location.href = '/ontvanger';
+			//console.log(response);
+			location.href = response;
 			//jQuery('#love-count').html( response );
 		}
 	});

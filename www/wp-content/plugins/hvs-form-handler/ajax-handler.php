@@ -73,6 +73,7 @@ function hvs_close_goodbye() {
 	//$love = get_post_meta( $_REQUEST['post_id'], 'post_love', true );
 	if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) { 
 
+		$_SESSION['voornaam'] = $_REQUEST['voornaam'];
 
 		$deelnemer = array(
 		    "geslacht" => $_REQUEST['geslacht'],
@@ -96,7 +97,14 @@ function hvs_close_goodbye() {
 		hvs_save_deelnemer($deelnemer);
 		$result = hvs_send_email($deelnemer);
 
+		if($_REQUEST['aanbiedingen']){
+			$result = '/bedankt-a';	
+		} else {
+			$result = '/bedankt-b';	
+		}
+
 		//wp_redirect( '/ontvanger');
+		//
 		echo $result;
 		die();
 	}
@@ -251,13 +259,15 @@ function hvs_send_email($deelnemer){
 	//$mail->Host = 'mail.hintshofvansaksen.nl';  // Specify main and backup SMTP servers
 	$mail->Host = 'tls://mail.hintshofvansaksen.nl:587';
 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	$mail->Username = 'noreply@hintshofvansaksen.nl';
-	$mail->Password = 'VEmO9KGr7jho';
+	//$mail->Username = 'noreply@hintshofvansaksen.nl'; blocked
+	//$mail->Password = 'VEmO9KGr7jho';
+	$mail->Username = 'dummy@hintshofvansaksen.nl';
+	$mail->Password = '56RfwngGdSb97f9yYygTgf';
 	//$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 	//$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 	//$mail->Port = 587;  //587                                  // TCP port to connect to
 
-	$mail->setFrom('noreply@hintshofvansaksen.nl');
+	$mail->setFrom('dummy@hintshofvansaksen.nl');
 	$mail->addAddress($deelnemer['email_ontvanger']);               // Name is optional
 	$mail->addAddress($deelnemer['email_ontvanger']);               // Name is optional
 	//$mail->addAddress('info@martijnwip.nl');     
@@ -282,18 +292,19 @@ function hvs_send_email($deelnemer){
 	//set the right image;
 	$mail_html = str_replace("%replace_image%", $url_image, $mail_template);
 	// 
-
 	//$mail->msgHTML($mail_html);
 	//use to work
 	$mail->msgHTML(file_get_contents(get_template_directory().  '/mail_template_static.html'), dirname(__FILE__));
 	$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-	if(!$mail->send()) {
-	    //echo 'Message could not be sent.';
-	    //echo 'Mailer Error: ' . $mail->ErrorInfo;
-	    return 'Message could not be sent.' ;
-	} else {
-	    //echo 'Message has been sent';
-	    return 'Message has been sent :'. $mail_html;
-	}
+	// if(!$mail->send()) {
+	//     //echo 'Message could not be sent.';
+	//     //echo 'Mailer Error: ' . $mail->ErrorInfo;
+	//     return 'Message could not be sent.' . $mail->ErrorInfo;
+	// } else {
+	//     //echo 'Message has been sent';
+	//     return 'Message has been sent :'. $mail_html;
+	// }
+	return "message send command disabled";
 }
+

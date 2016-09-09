@@ -5,59 +5,77 @@
 	margin-bottom: -5px;
 }
 
-//ontbijt uitwaaien treatment dinner
-.inivitation {
 
-	width: 280px;
-	height:150px;
-	margin-left: auto;
-	margin-right: auto;
-	position: relative;
-
-	//ontbijt uitwaaien treatment dinner
-	label{
-		z-index: 10;
-		font-family: 'jennasue';
-		color: #FFF;
-		position: absolute;
-	    font-size: 19px;
-	    left: 150px;
-	}
-
-	//ontbijt uitwaaien treatment dinner
-	//
-	.ontvanger{
-	    top: 30px;
-	    z-index: 20;
-	}
-
-	//ontbijt uitwaaien treatment dinner
-	.type{
-		font-family: 'myriadpro-regular';
-		font-size: 11px;
-		background-color: $brand-primary;
-		width: 120px;
-    	text-align: left;
-    	top: 62px;
-	}
-
-	.afzender{
-	    top: 93px;
-	}
-
-
-	.three_lines{
-		top: 105px;
-	}
-
-	img{
-		//max-width: 100%;
-		width: 280px ;
-		height:150px;
-	}
-}
 
 .home .content{
 	//margin-top: -12px;
 }
+
+.top_correction{
+	position: relative;
+	top:-5px;
+}
+
+
+
+// .vertical-center {
+//   min-height: 100%;  /* Fallback for vh unit */
+//   min-height: 100vh; /* You might also want to use
+//                         'height' property instead.
+                        
+//                         Note that for percentage values of
+//                         'height' or 'min-height' properties,
+//                         the 'height' of the parent element
+//                         should be specified explicitly.
+  
+//                         In this case the parent of '.vertical-center'
+//                         is the <body> element */
+
+//   /* Make it a flex container */
+//   display: -webkit-box;
+//   display: -moz-box;
+//   display: -ms-flexbox;
+//   display: -webkit-flex;
+//   display: flex; 
+  
+//   /* Align the bootstrap's container vertically */
+//     -webkit-box-align : flex-end;
+//   -webkit-align-items : flex-end;
+//        -moz-box-align : flex-end;
+//        -ms-flex-align : flex-end;
+//           align-items : flex-end;
+  
+//   /* In legacy web browsers such as Firefox 9
+//      we need to specify the width of the flex container */
+//   width: 100%;
+  
+//   /* Also 'margin: 0 auto' doesn't have any effect on flex items in such web browsers
+//      hence the bootstrap's container won't be aligned to the center anymore.
+  
+//      Therefore, we should use the following declarations to get it centered again */
+//          -webkit-box-pack : center;
+//             -moz-box-pack : center;
+//             -ms-flex-pack : center;
+//   -webkit-justify-content : center;
+//           justify-content : center;
+// }
+
+// html, body, .wrap{
+// 	height:100%; 
+// 	margin:0;
+// 	padding:0
+// }
+
+// .vertical-center{
+//   height:100%;
+//   display:table;
+//   width: 100%;
+//   padding: 0;
+
+//   main{
+//   	height: 100%; 
+//   	display:table-cell; 
+//   	vertical-align: bottom;
+//   }
+// }
 

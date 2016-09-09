@@ -33,3 +33,12 @@ ul.share-buttons .sr-only {
 ul.share-buttons img{
   width: 32px;
 }
+
+.dummy{
+  background-color: grey !important;
+  //vertical-align: bottom  !important;
+
+  // Center Block
+  @include center-block();
+  margin-bottom: 15%;
+}

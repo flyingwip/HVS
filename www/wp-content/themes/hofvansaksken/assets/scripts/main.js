@@ -79,7 +79,6 @@
 
       //radio group that is rqeuired
       if(condition==='required'){
-        //console.log($target);
         Hints.checkRequired($target);
         return true;
       }
@@ -89,15 +88,23 @@
     },
     checkRequired: function($target) {
 
+        
+
         $target.change(function() {
-                    
+
+          if($target.is(':radio')){
+            $target.attr('has-validated',"true"); 
+            $(document).trigger('has-validated-changed');
+            return true;             
+          }
+
           if($target.is(':checked')){
             $target.attr('has-validated',"true");  
-            
           } else {
             $target.attr('has-validated',"false");  
           }
           $(document).trigger('has-validated-changed');
+
         });
 
     },
@@ -199,9 +206,18 @@
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
+
+        //
+
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
+
+        Hints.checkifValid( $("input:radio"),"required" );        
+
+        Hints.checkFormValid( $("button[type='submit']") );
+
+
       }
     },
     // Home page
@@ -235,14 +251,19 @@
         // JavaScript to be fired on the about us page
       },
       finalize: function() {
+
+        //window.scrollTo(0,10); 
+        
+        
         
         Hints.maxlengthIndicator($("input#voornaam"));
-        Hints.cloneInput($("input#voornaam"), $("label.afzender"), "Liefs");
+        Hints.cloneInput($("nput#voornaam"), $("label.afzender"), "Liefs");
         Hints.checkifValid($("input#voornaam"),'empty');
         Hints.checkifValid($("input#achternaam"),'empty');
         Hints.checkifValid($("input#email"),'email');
 
-        //Hints.checkifValid( $("input[type=radio][name='geslacht']") ,'radio');
+        Hints.checkifValid( $("input[type=radio][name='geslacht']") ,'required');
+        Hints.checkifValid( $("input[type=radio][name='land']") ,'required');
         //Hints.checkifValid( $("input[type=checkbox][name='voorwaarden']") ,'required');
         Hints.checkifValid( $("input#actievoorwaarden"),"required" );
 

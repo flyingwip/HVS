@@ -67,8 +67,8 @@ form  img{
 
 //adjust the lay out form group for ontvanger page
 .form-group{
-  padding-top: 1%;
-  padding-bottom: 1%
+  //padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 .warning{
@@ -110,6 +110,53 @@ form  img{
 }
 
 
+input[type=radio] {
+  margin-left: 5px;
+}
+
+input[type="radio"], input[type="checkbox"]{
+  display: none;
+}
+
+input[type="radio"] + label,  {
+  display: inline-block;
+  background:url(../images/radio.png);
+  background-repeat: no-repeat;
+  background-position-y : 2px;
+  background-size: 17px 17px;
+  padding-left: 20px;
+  padding-right: 5px;
+  margin-top: 5px;
+ }
+
+ input[type="checkbox"] + label {
+  background:url(../images/check.png);
+  background-repeat: no-repeat;
+  background-size: 17px 20px;
+  padding-left: 22px;
+
+ }
+
+ input[type="checkbox"] + label {
+  padding-top: 2px;
+  padding-bottom: 3px;
+ }
+
+input[type="radio"]:checked + label {
+  //display: none;
+  //background-color: green;
+  background:url(../images/radio_select.png);
+  background-repeat: no-repeat;
+  background-size: 17px 17px;
+  padding-left: 20px;
+}
+
+input[type="checkbox"]:checked + label {
+  background:url(../images/check_select.png);
+  background-repeat: no-repeat;
+  background-size: 17px 20px;
+  padding-left: 22px;
+ }
 
 
 

@@ -73,7 +73,7 @@ function hvs_close_goodbye() {
 	//$love = get_post_meta( $_REQUEST['post_id'], 'post_love', true );
 	if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) { 
 
-		$_SESSION['voornaam'] = $_REQUEST['voornaam'];
+		$_SESSION['voornaam'] = $_REQUEST['voornaam	'];
 
 		$deelnemer = array(
 		    "geslacht" => $_REQUEST['geslacht'],

@@ -7,9 +7,13 @@
 
  <div class="container-fluid hvs-header">
   <div class="row">
-        <div class="inivitation orange">
+        <div class="pay_off vcenter">
+          <h1 >Herfsthints</h1>   
+          <h4 >Kies en win je favoriete verwenmoment</h4>
+        </div>  
+        <div class="inivitation">
 
-        <?php if ($_SESSION['ontvanger'] ): ?>
+         <?php if ($_SESSION['ontvanger'] ): ?>
            <label class="name ontvanger">Hallo <?php echo $_SESSION['ontvanger']; ?></label>
         <?php else: ?>
            <label class="name ontvanger">Hallo ...</label> 

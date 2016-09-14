@@ -8,7 +8,7 @@
 	//image-rendering: auto;
 	height: 50px;
 	//background: url('../images/temp_logo_xs.png') no-repeat center center fixed;
-	background: url('../images/temp_logo_xs_1_24.png') no-repeat 50% ;
+	background: url('../images/logo_hvs.svg') no-repeat 50% ;
 	background-size: cover;
 	background-size: 80px 40px;
 	//background: url('../images/temp_logo_xs.png') no-repeat  80px 40px;
@@ -34,7 +34,18 @@
   	padding-bottom: 2%;
     text-align: center;
 
+    //margin-top: 60px !important;
 }
+
+//hide the header on the hints page
+.hint .hvs-header, .form .hvs-header{
+	display: none !important;
+
+}
+
+.home .hvs-header{
+     
+ }
 
 //ontbijt uitwaaien treatment dinner
 .inivitation {
@@ -88,13 +99,37 @@
 	}
 }
 
-//hide on the invitation on the home page
+.pay_off{
+	display: none;
+}
+
+
 .home{ 
 	.hvs-header{
-		display: none;
+		
+		max-height: 180px;
+
 		@media (min-width: $screen-sm-min) { 
 			display: block;
+			max-height: 220px;
+			.pay_off{
+				top:50px;
+			}
+
 		}
+
+		.pay_off{
+			display: block;
+    		color: #FFF !important;
+		    text-shadow: 4px 4px 4px rgba(41, 55, 97, .6);
+		    position: relative;
+		    top:30px;
+		    h1{
+		        font-size: 50px;
+		        margin-bottom: -10px;
+		    }
+		}
+		//
 	}
 
 	.inivitation{

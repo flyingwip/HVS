@@ -52,11 +52,29 @@ add_action( 'wp_ajax_hvs_ontvanger', 'hvs_ontvanger' );
 
 function hvs_ontvanger() {
 	//$love = get_post_meta( $_REQUEST['post_id'], 'post_love', true );
-	if ( defined( 'DOING_AJAX' ) && DOING_AJAX && $_REQUEST['ontvanger'] && $_REQUEST['email_ontvanger'] ) { 
+	if ( defined( 'DOING_AJAX' ) && DOING_AJAX && $_REQUEST['ontvanger'] && $_REQUEST['voornaam'] ) { 
 		//wp_redirect( '/ontvanger');
 		
-		$_SESSION['ontvanger'] = $_REQUEST['ontvanger'];
-		$_SESSION['email_ontvanger'] = $_REQUEST['email_ontvanger'];
+		$_SESSION['ontvanger'] = ucfirst ( $_REQUEST['ontvanger']);
+		$_SESSION['voornaam'] = ucfirst ( $_REQUEST['voornaam']);
+		echo '/email' ;
+		die();
+	}
+	else {
+		echo '/foute boel' ;
+		die();
+	}
+}
+
+add_action( 'wp_ajax_nopriv_hvs_email', 'hvs_email' );
+add_action( 'wp_ajax_hvs_email', 'hvs_email' );
+
+function hvs_email() {
+	//$love = get_post_meta( $_REQUEST['post_id'], 'post_love', true );
+	if ( defined( 'DOING_AJAX' ) && DOING_AJAX && $_REQUEST['email_ontvanger']) { 
+		//wp_redirect( '/ontvanger');
+		
+		$_SESSION['email_ontvanger'] = ucfirst ( $_REQUEST['email_ontvanger']);
 		echo '/form' ;
 		die();
 	}
@@ -66,20 +84,19 @@ function hvs_ontvanger() {
 	}
 }
 
-add_action( 'wp_ajax_nopriv_hvs_close_goodbye', 'close_goodbye' );
+add_action( 'wp_ajax_nopriv_hvs_close_goodbye', 'hvs_close_goodbye' );
 add_action( 'wp_ajax_hvs_close_goodbye', 'hvs_close_goodbye' );
 
 function hvs_close_goodbye() {
 	//$love = get_post_meta( $_REQUEST['post_id'], 'post_love', true );
 	if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) { 
 
-		$_SESSION['voornaam'] = $_REQUEST['voornaam	'];
-
 		$deelnemer = array(
 		    "geslacht" => $_REQUEST['geslacht'],
 		    "voornaam" => $_REQUEST['voornaam'],
+		    "voornaam_kaart" => $_SESSION['voornaam'],
 		    "tussenv" => $_REQUEST['tussenv'],
-		    "achternaam" => $_REQUEST['achternaam'],
+		    "achternaam" => ucfirst ($_REQUEST['achternaam']),
 		    "email" => $_REQUEST['email'],
 		    "land" => $_REQUEST['land'],
 		    "aanbiedingen" => $_REQUEST['aanbiedingen'],
@@ -95,12 +112,12 @@ function hvs_close_goodbye() {
 		$deelnemer['image_file_name'] = $image_file_name;
 		
 		hvs_save_deelnemer($deelnemer);
-		$result = hvs_send_email($deelnemer);
+		//$result = hvs_send_email($deelnemer);
 
 		if($_REQUEST['aanbiedingen']){
 			$result = '/bedankt-a';	
 		} else {
-			$result = '/bedankt-b';	
+			$result = '/bedankt-b' ;	
 		}
 
 		//wp_redirect( '/ontvanger');
@@ -132,6 +149,11 @@ function hvs_save_deelnemer($deelnemer){
 		//voornaam
 		$field_key = "field_57ce9356a92b4";
 		$value = $deelnemer['voornaam'];
+		update_field( $field_key, $value, $post_id );
+
+		//voornaam op de kaart
+		$field_key = "field_57d938fb9c799";
+		$value = $deelnemer['voornaam_kaart'];
 		update_field( $field_key, $value, $post_id );
 
 		//tussenv
@@ -222,7 +244,7 @@ function hvs_create_image($deelnemer){
 
 
 	//second text
-	$from = "Liefs " . $deelnemer['voornaam'];
+	$from = "Liefs " . $deelnemer['voornaam_kaart'];
 
 	// Print Text On Image
 	imagettftext($png_image, 25, 0, 175, 150, $white, $font_jenna_path, $from);

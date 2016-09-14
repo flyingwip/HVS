@@ -19,25 +19,42 @@ jQuery( document ).on( 'click', '.kies-je-hint', function() {
 })
 
 
-jQuery( document ).on( 'click', '.ga-naar-form', function() {
+jQuery( document ).on( 'click', '.ga-naar-email', function() {
 	
-
 	jQuery.ajax({
 		url : hvsFeScript.ajax_url,
 		data : {
 			action : 'hvs_ontvanger',
 			ontvanger : jQuery('#ontvanger').val(),
-			email_ontvanger: jQuery('#email_ontvanger').val()
+			voornaam: jQuery('#voornaam').val()
 		},
 		success : function( response ) {
-			//console.log(response);
+			console.log(response);
 			location.href = response;
 			
 		}
 	});
 
 	return false;
-})
+});
+
+jQuery( document ).on( 'click', '.ga-naar-form', function() {
+	
+	jQuery.ajax({
+		url : hvsFeScript.ajax_url,
+		data : {
+			action : 'hvs_email',
+			email_ontvanger : jQuery('#email_ontvanger').val()
+		},
+		success : function( response ) {
+			
+			location.href = response;
+			
+		}
+	});
+
+	return false;
+});
 
 
 jQuery( document ).on( 'click', '.sluit-af', function() {

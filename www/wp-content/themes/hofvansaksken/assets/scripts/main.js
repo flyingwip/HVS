@@ -183,6 +183,9 @@
     enabled: function( $target  ) { 
         $target.removeClass('disabled');        
         $target.addClass('ensabled');        
+    },
+    capitalizeFirstLetter: function( string  ) { 
+      return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
 
@@ -220,7 +223,7 @@
 
       }
     },
-    // Home page
+    // modified
     'ontvanger': {
       init: function() {
         // JavaScript to be fired on the ontvanger page
@@ -234,15 +237,65 @@
         Hints.cloneInput($("input#ontvanger"), $("label.ontvanger"), "Hallo");
         //add validation for input
         Hints.checkifValid($("input#ontvanger"),'empty');
-        Hints.checkifValid($("input#email_ontvanger"),'empty');
+        Hints.checkifValid($("input#voornaam"),'empty');
+
+        Hints.cloneInput($("input#voornaam"), $("label.afzender"), "Liefs");
         //add email validation
-        Hints.checkifValid($("input#email_ontvanger"),'email');
+        
         //validate the form
         Hints.checkFormValid( $("button[type='submit']") );
+        
+        
+
+        //$(".lbl_test").text("text vanuit jquery");  
+        // var _originalSize =  $(window).height();
+        // $(window).resize(function(){
+        //   c++;
+        //   $(".lbl_test").text("resizes " + $(window).height() + " :: " + _originalSize ) ;  
+        //   if($(window).width() + $(window).height() != _originalSize){
+        //     //alert("keyboard show up");
+        //     //$(".lbl_test").text("keyboard show up");  
+        //   }else{
+        //     //alert("keyboard closed");
+        //     //$(".lbl_test").text("keyboard is closed");  
+        //   }
+        // });
+
+        $( "input#ontvanger" ).focus(function() {
+           $("html, body").scrollTop(70);
+           
+        });
+
+        $( "input#voornaam" ).focus(function() {
+          //alert( "Handler for .focus() called." );
+          //$( ".hvs-header" ).scrollTop( 300 );
+          //$(".lbl_test").text(  'voornaam' );  
+          $("html, body").scrollTop(90);
+          //$("html, body").animate({ scrollTop: 70 }, "slow");
+        });
+
+
 
 
       },
 
+    },
+    'email': {
+      init: function() {
+        // JavaScript to be fired on the home page
+        var str = $(".lbl_header").text();
+        str =  str.replace("$ontvanger$", $('#hddn_ontvanger').val()  );
+        $(".lbl_header").text(str);  
+
+      },
+      finalize: function() {
+        // JavaScript to be fired on the home page, after the init JS
+        Hints.checkifValid($("input#email_ontvanger"),'empty');
+        Hints.checkifValid($("input#email_ontvanger"),'email');
+
+        Hints.checkFormValid( $("button[type='submit']") );
+        
+      }
     },
 
     // About us page, note the change from about-us to about_us.
@@ -253,21 +306,16 @@
       finalize: function() {
 
         //window.scrollTo(0,10); 
-        
-        
-        
-        Hints.maxlengthIndicator($("input#voornaam"));
-        Hints.cloneInput($("nput#voornaam"), $("label.afzender"), "Liefs");
-        Hints.checkifValid($("input#voornaam"),'empty');
+
+        $("input#voornaam").val( $('#hddn_voornaam').val() );
+
         Hints.checkifValid($("input#achternaam"),'empty');
         Hints.checkifValid($("input#email"),'email');
 
-        Hints.checkifValid( $("input[type=radio][name='geslacht']") ,'required');
-        Hints.checkifValid( $("input[type=radio][name='land']") ,'required');
+        //Hints.checkifValid( $("input[type=radio][name='geslacht']") ,'required');
+        //Hints.checkifValid( $("input[type=radio][name='land']") ,'required');
         //Hints.checkifValid( $("input[type=checkbox][name='voorwaarden']") ,'required');
         Hints.checkifValid( $("input#actievoorwaarden"),"required" );
-
-
 
 
         Hints.checkFormValid( $("button[type='submit']") );

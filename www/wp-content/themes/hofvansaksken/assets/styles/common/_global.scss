@@ -39,15 +39,36 @@ ul, ol {
     padding-left:0;
 }​
 
-.unbold{
-    font-family: 'myriadpro-regular' !important;
-    text-align: center !important;
-}
+
 
 .vcenter {
     display: inline-block;
     vertical-align: middle;
     float: none;
 }
+
+.dropshadow{
+    -moz-box-shadow: 1px 1px 2px #ccc;
+    -webkit-box-shadow: 1px 1px 2px #ccc;
+    box-shadow: 1px 1px 2px #ccc;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color='#ccc')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color='#ccc');
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    //need to make this correction
+    .hint .content.row, .ontvanger .content.row {
+        margin-left: -30px;
+    }    
+
+}
+
+@media (min-width: $screen-md-min) { 
+    .container { max-width: 650px; } 
+}
+
+
+
 
 

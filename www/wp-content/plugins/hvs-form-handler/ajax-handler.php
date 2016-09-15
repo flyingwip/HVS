@@ -120,6 +120,8 @@ function hvs_close_goodbye() {
 			$result = '/bedankt-b' ;	
 		}
 
+		//remove all session variables
+  		session_unset();
 		//wp_redirect( '/ontvanger');
 		//
 		echo $result;

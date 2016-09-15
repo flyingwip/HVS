@@ -6,14 +6,12 @@
 	image-rendering: -webkit-optimize-contrast;
 	//image-rendering: crisp-edges;
 	//image-rendering: auto;
-	height: 50px;
+	height: 70px;
 	//background: url('../images/temp_logo_xs.png') no-repeat center center fixed;
 	background: url('../images/logo_hvs.svg') no-repeat 50% ;
 	background-size: cover;
-	background-size: 80px 40px;
+	background-size: 110px 55px;
 	//background: url('../images/temp_logo_xs.png') no-repeat  80px 40px;
-
-	
 	@media (min-width: $screen-sm-min) { 
 		height: 70px;
 		background: url('../images/temp_logo_xs_2_51.png') no-repeat  50%;
@@ -23,7 +21,7 @@
 
 .hvs-header{
 
-	background: url('http://www.hofvansaksen.nl/~/media/images/parken/hsn/1280x430/hsn_resort_01_47212_1280x430px.jpg') no-repeat center center scroll;
+	background: url('http://www.hofvansaksen.nl/~/media/images/parken/hsn/1280x430/hsn_resort_01_47212_1280x430px.jpg') no-repeat center center scroll ;
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -35,16 +33,62 @@
     text-align: center;
 
     //margin-top: 60px !important;
+
+
+}
+
+//4 types of background 
+
+.hvs-header.fiets{
+	background: url('../images/bg_fiets.png') no-repeat center center scroll ;	
+}
+
+.hvs-header.breakfast{
+	background: url('../images/bg_breakfast.png') no-repeat center center scroll;	
+}
+
+.hvs-header.dinner{
+	background: url('../images/bg_dinner.png') no-repeat center center scroll;	
+}
+
+.hvs-header.treatment{
+	background: url('../images/bg_treatment.png') no-repeat center center scroll;	
 }
 
 //hide the header on the hints page
 .hint .hvs-header, .form .hvs-header{
 	display: none !important;
-
 }
 
-.home .hvs-header{
-     
+//show on desktop
+@media (min-width: $screen-sm-min) { 
+	.hint .hvs-header, .form .hvs-header{
+		display: block !important;
+
+		.invitation{
+			display: none !important;
+		}
+	}
+}
+
+//rezize the header for ontvanger, emaol
+.ontvanger .hvs-header, .email .hvs-header{
+	height: 120px;
+	padding-top: 0;
+	padding-bottom: 0;
+	background-position-y : 10px;
+
+	@media (min-width: $screen-sm-min) { 
+		//background-position-y : 15px;
+    	height: 250px;
+    	background-position-y : 0px ;
+    }
+}
+
+.bedankt-b .hvs-header, .bedankt-a .hvs-header{
+     .inivitation {
+     	visibility: hidden;
+     }
  }
 
 //ontbijt uitwaaien treatment dinner
@@ -55,6 +99,34 @@
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
+
+
+	/* Small devices (tablets, 768px and up) */
+	@media (min-width: $screen-sm-min) { 
+		width: 460px;
+		height:230px !important;
+		top:20px;
+
+		label{
+			left: 245px !important;
+			font-size: 22px !important;	
+		}
+
+		.ontvanger{
+			top:40px !important;
+		}
+
+		.type{
+			width: 170px !important;
+			font-size: 14px !important;
+			top:80px !important;
+		}
+
+		.afzender{
+			top:150px !important;
+			left: 350px !important;
+		}
+	}
 
 	//ontbijt uitwaaien treatment dinner
 	label{
@@ -77,7 +149,6 @@
 	.type{
 		font-family: 'myriadpro-regular';
 		font-size: 11px;
-		background-color: $brand-primary;
 		width: 120px;
     	text-align: left;
     	top: 52px;
@@ -93,9 +164,9 @@
 	}
 
 	img{
-		//max-width: 100%;
-		width: 280px ;
-		height:130px;
+		max-width: 100%;
+		//width: 280px ;
+		//height:130px;
 	}
 }
 
@@ -111,7 +182,7 @@
 
 		@media (min-width: $screen-sm-min) { 
 			display: block;
-			max-height: 220px;
+			max-height: 250px;
 			.pay_off{
 				top:50px;
 			}

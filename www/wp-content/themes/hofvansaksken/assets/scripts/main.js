@@ -206,7 +206,7 @@
       }
     },
     // Home page
-    'home': {
+    'hint': {
       init: function() {
         // JavaScript to be fired on the home page
 
@@ -214,12 +214,9 @@
 
       },
       finalize: function() {
-        // JavaScript to be fired on the home page, after the init JS
-
+        
         Hints.checkifValid( $("input:radio"),"required" );        
-
         Hints.checkFormValid( $("button[type='submit']") );
-
 
       }
     },
@@ -245,22 +242,6 @@
         //validate the form
         Hints.checkFormValid( $("button[type='submit']") );
         
-        
-
-        //$(".lbl_test").text("text vanuit jquery");  
-        // var _originalSize =  $(window).height();
-        // $(window).resize(function(){
-        //   c++;
-        //   $(".lbl_test").text("resizes " + $(window).height() + " :: " + _originalSize ) ;  
-        //   if($(window).width() + $(window).height() != _originalSize){
-        //     //alert("keyboard show up");
-        //     //$(".lbl_test").text("keyboard show up");  
-        //   }else{
-        //     //alert("keyboard closed");
-        //     //$(".lbl_test").text("keyboard is closed");  
-        //   }
-        // });
-
         $( "input#ontvanger" ).focus(function() {
            $("html, body").scrollTop(70);
            

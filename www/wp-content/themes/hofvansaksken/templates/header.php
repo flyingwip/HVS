@@ -5,7 +5,11 @@
     </header>
 </a>    
 
- <div class="container-fluid hvs-header">
+<?php if( !is_front_page() && is_page('hint')!=1 && is_page('form')!=1 ): ?>  
+  <div class="container-fluid hvs-header <?php echo $_SESSION['hint'] ; ?>">
+<?php else: ?>  
+  <div class="container-fluid hvs-header">
+<?php endif; ?>
   <div class="row">
         <div class="pay_off vcenter">
           <h1 >Herfsthints</h1>   

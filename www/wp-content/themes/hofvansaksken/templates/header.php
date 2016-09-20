@@ -5,7 +5,7 @@
     </header>
 </a>    
 
-<?php if( !is_front_page() && is_page('hint')!=1 && is_page('form')!=1 ): ?>  
+<?php if( !is_front_page() && is_page('hint')!=1 && is_page('form')!=1 && is_page('bedankt-a')!=1 && is_page('bedankt-b')!=1 ): ?>  
   <div class="container-fluid hvs-header <?php echo $_SESSION['hint'] ; ?>">
 <?php else: ?>  
   <div class="container-fluid hvs-header">

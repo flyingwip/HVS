@@ -17,7 +17,7 @@
 
     maxlengthIndicator: function($target) {
         
-        $target.keyup(function(){  
+        $target.blur(function(){  
               //get the limit from maxlength attribute  
               var limit = parseInt($(this).attr('maxlength'));  
               //get the current text inside the textarea  
@@ -53,7 +53,6 @@
         if( !Hints.validEmail($target.val()) ){
           Hints.isnotValid($target);
         } else {
-          
           Hints.isValid($target);
         } 
       });
@@ -126,7 +125,7 @@
 
     },
     isEmpty: function($target) { 
-        return (($target.val()) ? false : true);  
+        return (($target.val().length>1 ) ? false : true);  
     },
     isnotValid: function($target) { 
       //change the attribute

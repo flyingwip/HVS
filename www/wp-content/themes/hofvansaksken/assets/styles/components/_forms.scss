@@ -72,7 +72,7 @@ form  img{
 }
 
 .warning{
-  border:1px solid red !important;
+  border:0px solid #fff !important;
 
 }
 
@@ -146,6 +146,7 @@ input[type="radio"]:checked + label {
   //display: none;
   //background-color: green;
   background:url(../images/radio_select.png);
+  background-position-y : 2px;
   background-repeat: no-repeat;
   background-size: 17px 17px;
   padding-left: 20px;

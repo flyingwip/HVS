@@ -33,6 +33,7 @@
     text-align: center;
 
     //margin-top: 60px !important;
+    margin-bottom: 20px;
 
 
 }
@@ -40,23 +41,47 @@
 //4 types of background 
 
 .hvs-header.fiets{
-	background: url('../images/bg_fiets.png') no-repeat center center scroll ;	
+	background: url('../images/bg_fiets.png') no-repeat center center scroll ;
+    -webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+    
+
 }
 
 .hvs-header.breakfast{
-	background: url('../images/bg_breakfast.png') no-repeat center center scroll;	
+	background: url('../images/bg_breakfast.png') no-repeat center center scroll;
+    -webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+    
+
 }
 
 .hvs-header.dinner{
-	background: url('../images/bg_dinner.png') no-repeat center center scroll;	
+	background: url('../images/bg_dinner.png') no-repeat center center scroll;
+    -webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+    
+
 }
 
 .hvs-header.treatment{
-	background: url('../images/bg_treatment.png') no-repeat center center scroll;	
+	background: url('../images/bg_treatment.png') no-repeat center center scroll;
+    -webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+    
+
 }
 
 //hide the header on the hints page
-.hint .hvs-header, .form .hvs-header{
+.hint .hvs-header, .form .hvs-header, .actievoorwaarden .hvs-header{
 	display: none !important;
 }
 
@@ -66,8 +91,10 @@
 		display: block !important;
 
 		.invitation{
-			display: none !important;
+			display: none;
 		}
+
+
 	}
 }
 
@@ -85,11 +112,6 @@
     }
 }
 
-.bedankt-b .hvs-header, .bedankt-a .hvs-header{
-     .inivitation {
-     	visibility: hidden;
-     }
- }
 
 //ontbijt uitwaaien treatment dinner
 .inivitation {
@@ -174,8 +196,20 @@
 	display: none;
 }
 
+.hint .hvs-header{
+	 //height: 250px;
+	 
+     // .inivitation {
+     // 	display: none;
 
-.home{ 
+     // }
+
+     
+ }
+
+
+
+.home, .bedankt-a, .bedankt-b,.hint { 
 	.hvs-header{
 		
 		max-height: 180px;

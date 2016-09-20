@@ -2,7 +2,7 @@
 /**
  * Template Name: Send Email Template
  */
-require_once __DIR__ . '/vendor/autoload.php';
+//require_once __DIR__ . '/vendor/autoload.php';
 
 
 //echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."\n";
@@ -74,48 +74,48 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 
 
-$mail = new PHPMailer;
-//$mail->SMTPDebug = 1;                               // Enable verbose debug output
-$mail->isSMTP();
-$mail->SMTPOptions = array(
-    'ssl' => array(
-        'verify_peer' => false,
-        'verify_peer_name' => false,
-        'allow_self_signed' => true
-    )
-);                                      // Set mailer to use SMTP
-//$mail->Host = 'mail.hintshofvansaksen.nl';  // Specify main and backup SMTP servers
-$mail->Host = 'tls://mail.hintshofvansaksen.nl:587';
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'noreply@hintshofvansaksen.nl';
-$mail->Password = 'VEmO9KGr7jho';
-//$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-//$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-//$mail->Port = 587;  //587                                  // TCP port to connect to
+// $mail = new PHPMailer;
+// $mail->SMTPDebug = 3;                               // Enable verbose debug output
+// $mail->isSMTP();
+// $mail->SMTPOptions = array(
+//     'ssl' => array(
+//         'verify_peer' => false,
+//         'verify_peer_name' => false,
+//         'allow_self_signed' => true
+//     )
+// );                                      // Set mailer to use SMTP
+// //$mail->Host = 'mail.hintshofvansaksen.nl';  // Specify main and backup SMTP servers
+// $mail->Host = 'tls://mail.hintshofvansaksen.nl:587';
+// $mail->SMTPAuth = true;                               // Enable SMTP authentication
+// $mail->Username = 'verwenmoment@hintshofvansaksen.nl';
+// $mail->Password = '815RfgwnGdSb9gTgf';
+// //$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+// //$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+// //$mail->Port = 587;  //587                                  // TCP port to connect to
 
-$mail->setFrom('noreply@hintshofvansaksen.nl');
-$mail->addAddress('martijnwip@gmail.com');               // Name is optional
-$mail->addAddress('flyingwip@gmail.com');               // Name is optional
-$mail->addAddress('info@martijnwip.nl');     
-$mail->addReplyTo('info@example.com', 'Information');
-//$mail->addCC('cc@example.com');
-//$mail->addBCC('bcc@example.com');
+// $mail->setFrom('no-reply@hintshofvansaksen.nl');
+// $mail->addAddress('martijnwip@gmail.com');               // Name is optional
+// $mail->addAddress('flyingwip@gmail.com');               // Name is optional
+// $mail->addAddress('info@martijnwip.nl');     
+// //$mail->addReplyTo('info@example.com', 'Information');
+// //$mail->addCC('cc@example.com');
+// //$mail->addBCC('bcc@example.com');
 
-//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-$mail->addAttachment('/dist/images/email_header.png', 'new.jpg');    // Optional name
-$mail->isHTML(true);                                  // Set email format to HTML
+// //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+// $mail->addAttachment('/dist/images/email_header.png', 'new.jpg');    // Optional name
+// $mail->isHTML(true);                                  // Set email format to HTML
 
-$mail->Subject = 'Here is the subject';
-//$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-$mail->msgHTML(file_get_contents(get_template_directory().  '/mail_template_static.html'), dirname(__FILE__));
-$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+// $mail->Subject = 'Here is the subject';
+// //$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+// $mail->msgHTML(file_get_contents(get_template_directory().  '/mail_template_static.html'), dirname(__FILE__));
+// $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-if(!$mail->send()) {
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
-} else {
-    echo 'Message has been sent';
-}
+// if(!$mail->send()) {
+//     //echo 'Message could not be sent.';
+//     echo 'Mailer Error: ' . $mail->ErrorInfo;
+// } else {
+//     echo 'Message has been sent';
+// }
 
 
 // //Create a new PHPMailer instance

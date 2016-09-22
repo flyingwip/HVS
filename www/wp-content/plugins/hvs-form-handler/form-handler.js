@@ -30,7 +30,6 @@ jQuery( document ).on( 'click', '.ga-naar-email', function() {
 			voornaam: jQuery('#voornaam').val()
 		},
 		success : function( response ) {
-			console.log(response);
 			location.href = response;
 			
 		}

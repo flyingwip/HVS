@@ -15,7 +15,7 @@
 }
 
 
-input[type=text], input[type=email]{
+input[type=text], input[type=email], input[type=input]{
   border-radius: 0px;
   border: 1px solid $brand-primary;
 }
@@ -72,8 +72,8 @@ form  img{
 }
 
 .warning{
-  border:0px solid #fff !important;
-
+  //border:1px solid red !important;
+  color: red;
 }
 
 .disabled{
@@ -123,7 +123,7 @@ input[type="radio"] + label,  {
   background:url(../images/radio.png);
   background-repeat: no-repeat;
   background-position-y : 2px;
-  background-size: 17px 17px;
+  background-size: 14px 14px;
   padding-left: 20px;
   padding-right: 5px;
   margin-top: 5px;
@@ -131,13 +131,15 @@ input[type="radio"] + label,  {
 
  input[type="checkbox"] + label {
   background:url(../images/check.png);
+  background-position-y : 2px;
   background-repeat: no-repeat;
-  background-size: 17px 20px;
+  background-size: 14px 14px;
   padding-left: 22px;
 
  }
 
  input[type="checkbox"] + label {
+
   padding-top: 2px;
   padding-bottom: 3px;
  }
@@ -148,17 +150,40 @@ input[type="radio"]:checked + label {
   background:url(../images/radio_select.png);
   background-position-y : 2px;
   background-repeat: no-repeat;
-  background-size: 17px 17px;
+  background-size: 14px 14px;
   padding-left: 20px;
 }
 
 input[type="checkbox"]:checked + label {
   background:url(../images/check_select.png);
+  background-position-y : 2px;
   background-repeat: no-repeat;
-  background-size: 17px 20px;
+  background-size: 14px 14px;
   padding-left: 22px;
  }
 
+ .required{
+
+ }
+
+//::-webkit-input-placeholder:after{color:red;content:" *";}
+
+//::-moz-placeholder{color:red;content:" *";}
+
+// ::-webkit-input-placeholderafter{color:red;content:" *";}
+//   color: pink;
+// }
+// input::-moz-placeholder { /* Firefox 19+ */
+//   color: pink;
+// }
+// input:-ms-input-placeholder { /* IE 10+ */
+//   color: pink;
+// }
+// input:-moz-placeholder { /* Firefox 18- */
+//   color: pink;
+// }
+
+  
 
 
 

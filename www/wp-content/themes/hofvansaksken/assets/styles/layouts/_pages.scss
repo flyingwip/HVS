@@ -95,7 +95,20 @@
 
 	    font-family: 'myriadpro-regular' !important;
     	text-align: center !important;
+	    margin-top: -10px;
+	    margin-bottom: 2px;
+
+    	
+    	@media (min-width: $screen-xs-min) { 
+    		margin-top: 17px;	
+    		margin-bottom: 8px;
+
+
+    	}
     }
 }
 
+.partner{
+	color: #666 !important;
+}
 

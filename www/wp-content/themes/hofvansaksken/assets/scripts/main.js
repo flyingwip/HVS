@@ -15,6 +15,7 @@
 
   var Hints = {
 
+    enter_enabled:false,
     maxlengthIndicator: function($target) {
         
         $target.blur(function(){  
@@ -34,7 +35,7 @@
                   Hints.addWarning($target);
               } else {
                 
-                 Hints.removeWarning($target);
+                 Hints.removeWarning($target) ;
               }  
           });
     },
@@ -49,11 +50,24 @@
     },
     checkEmail: function($target ) {
 
-      $($target).blur( function(event){
+      $($target).keyup(function(event){
+        Hints.removeWarning($target);
         if( !Hints.validEmail($target.val()) ){
           Hints.isnotValid($target);
         } else {
           Hints.isValid($target);
+        } 
+      });
+
+      //also add blur event for auto fill
+      $($target).blur(function(event){
+        //console.log('blur');
+        if( !Hints.validEmail($target.val()) ){
+          Hints.isnotValid($target);
+          Hints.addWarning($target);
+        } else {
+          Hints.isValid($target);
+          Hints.removeWarning($target);
         } 
       });
 
@@ -108,7 +122,8 @@
 
     },
     checkIfEmpty: function($target) {
-        $($target).blur( function(event){
+      
+        $($target).keyup( function(event){
             if( Hints.isEmpty($target)  ){
               //console.log($target); 
               Hints.isnotValid($target);
@@ -132,16 +147,19 @@
       $target.attr('has-validated',"false");  
       //fire event
       $(document).trigger('has-validated-changed');
-      Hints.addWarning($target);
+      
+
+
     },
     isValid: function($target) { 
 
       $target.attr('has-validated',"true");  
-      
       //fire event
       $(document).trigger('has-validated-changed');
 
-      Hints.removeWarning($target);
+
+
+
 
       
     },
@@ -163,11 +181,11 @@
       //monitor the attribute chage
       $(document).on('has-validated-changed', function() {
         //var data = $('#contains-data').data('mydata');
-        
         total_validations = $("input[has-validated='false']").length;
 
         if(total_validations===0){
            Hints.enabled($target); 
+           Hints.addEnterEvent($target);
         } else{
           Hints.disable($target);
         } 
@@ -185,6 +203,35 @@
     },
     capitalizeFirstLetter: function( string  ) { 
       return string.charAt(0).toUpperCase() + string.slice(1);
+    },
+    addImagestoRadionButton: function( $class ) { 
+      //console.log('click me');
+      $(".radio-image").click(function(event){
+        event.preventDefault(); // cancel the event
+        var pointer = $(this).attr('for');
+        //now set the radio button to checked
+        //console.log(pointer);
+        Hints.checkRadioButton(pointer);
+      });
+    },
+    checkRadioButton: function( $pointer ) {
+      $("input:radio").attr('has-validated',"true");   
+      $("#"+$pointer).prop('checked',true);
+      $(document).trigger('has-validated-changed');
+      return true;
+    },  
+    addEnterEvent: function( $button ) {
+
+      if(!Hints.enter_enabled){
+        Hints.enter_enabled = true;
+        $(document).keyup(function( event ) {
+          if (event.keyCode == 13) {
+             $($button.selector).trigger('click');
+          }  
+        });
+      }
+      
+
     }
 
 
@@ -213,7 +260,9 @@
 
       },
       finalize: function() {
-        
+
+        //make images radio clickable add connect to radio button
+        Hints.addImagestoRadionButton(".radio-image");
         Hints.checkifValid( $("input:radio"),"required" );        
         Hints.checkFormValid( $("button[type='submit']") );
 
@@ -236,10 +285,10 @@
         Hints.checkifValid($("input#voornaam"),'empty');
 
         Hints.cloneInput($("input#voornaam"), $("label.afzender"), "Liefs");
-        //add email validation
-        
+
         //validate the form
-        Hints.checkFormValid( $("button[type='submit']") );
+        //Hints.checkFormValid( $("button[type='submit']") );
+        Hints.checkFormValid( $(".ga-naar-email") );
         
         $( "input#ontvanger" ).focus(function() {
            $("html, body").scrollTop(70);
@@ -247,12 +296,13 @@
         });
 
         $( "input#voornaam" ).focus(function() {
-          //alert( "Handler for .focus() called." );
-          //$( ".hvs-header" ).scrollTop( 300 );
-          //$(".lbl_test").text(  'voornaam' );  
           $("html, body").scrollTop(90);
-          //$("html, body").animate({ scrollTop: 70 }, "slow");
+
         });
+
+
+
+
 
 
 
@@ -273,7 +323,8 @@
         Hints.checkifValid($("input#email_ontvanger"),'empty');
         Hints.checkifValid($("input#email_ontvanger"),'email');
 
-        Hints.checkFormValid( $("button[type='submit']") );
+        //Hints.checkFormValid( $("button[type='submit']") );
+        Hints.checkFormValid( $(".ga-naar-form") );
         
       }
     },
@@ -337,3 +388,5 @@
   $(document).ready(UTIL.loadEvents);
 
 })(jQuery); // Fully reference jQuery after this point.
+
+

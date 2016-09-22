@@ -2,12 +2,18 @@
 
 
 button{
+  font-family: 'myriadpro-light';
 	background-color: $brand-primary !important;
 	color: #FFF !important;
 	border-radius: 0px !important;
 	border: 0px;
 	font-size: 16px !important;
+  //padding-top: 4% !important;
   //padding-bottom: 4% !important;
+  //padding-top: 12px !important;
+  //padding-bottom: 12px !important;
+  height: 41px !important;
+
 
   @media only screen 
   and (min-device-width : 320px) 
@@ -15,23 +21,35 @@ button{
   and (orientation : portrait) {
     margin-top:10px;
     font-size: 18px !important; 
-    padding-bottom: 28px !important;
+    //padding-bottom: 28px !important;
 
   }
 
 }
 
 
-
+.deel-dit{
+  position: relative;
+  top:36px;
+}
 
 ul.share-buttons{
   list-style: none;
   padding: 0;
+  margin-top: 5px;
+  
+  margin-left: auto;
+  margin-right: auto;
+  width: 79px;
 }
 
 ul.share-buttons li{
   display: inline;
+  padding: 3px;
+
 }
+
+
 
 ul.share-buttons .sr-only {
   position: absolute;

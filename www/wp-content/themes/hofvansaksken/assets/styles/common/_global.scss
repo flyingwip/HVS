@@ -23,6 +23,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'myriadpro-light';
+    src: url('../fonts/MyriadPro-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 
 body{
     margin: 0px !important;
@@ -34,8 +43,15 @@ body{
 h1, h2, h3, h4, h5{
     font-family: 'myriadpro-bold';
 }
+
+h5{
+    
+   @media (min-width: $screen-xs-min) { 
+        margin-bottom: 15px;
+   } 
+}
 ul, ol {
-    padding-left:5px;
+    padding-left:0px;
 }​
 
 

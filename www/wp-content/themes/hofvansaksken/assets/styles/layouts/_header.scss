@@ -13,8 +13,9 @@
 	background-size: 110px 55px;
 	//background: url('../images/temp_logo_xs.png') no-repeat  80px 40px;
 	@media (min-width: $screen-sm-min) { 
-		height: 70px;
-		background: url('../images/temp_logo_xs_2_51.png') no-repeat  50%;
+		height: 100px;
+		//background: url('../images/logo_hvs.svg') no-repeat  50%;
+		background-size: 150px 75px;
 	}
 }	
 
@@ -89,14 +90,10 @@
 @media (min-width: $screen-sm-min) { 
 	.hint .hvs-header, .form .hvs-header{
 		display: block !important;
-
-		.invitation{
-			display: none;
-		}
-
-
 	}
 }
+
+
 
 //rezize the header for ontvanger, emaol
 .ontvanger .hvs-header, .email .hvs-header{
@@ -122,7 +119,6 @@
 	margin-right: auto;
 	position: relative;
 
-
 	/* Small devices (tablets, 768px and up) */
 	@media (min-width: $screen-sm-min) { 
 		width: 460px;
@@ -145,8 +141,8 @@
 		}
 
 		.afzender{
-			top:150px !important;
-			left: 350px !important;
+			top:140px !important;
+			//left: 305px !important;
 		}
 	}
 
@@ -209,7 +205,7 @@
 
 
 
-.home, .bedankt-a, .bedankt-b,.hint { 
+.home,.hint { 
 	.hvs-header{
 		
 		max-height: 180px;
@@ -226,13 +222,19 @@
 		.pay_off{
 			display: block;
     		color: #FFF !important;
-		    text-shadow: 4px 4px 4px rgba(41, 55, 97, .6);
+		    text-shadow: 2px 2px 8px rgba(41, 55, 97, .4);
 		    position: relative;
-		    top:30px;
+		    top:50px;
 		    h1{
 		        font-size: 50px;
 		        margin-bottom: -10px;
 		    }
+
+		    h4{
+				font-family: 'myriadpro-regular';
+				font-size: 16px;
+			}
+
 		}
 		//
 	}
@@ -241,6 +243,49 @@
 		visibility: hidden;
 	}		
 }
+
+
+.bedankt-a, .bedankt-b,.form { 
+	.hvs-header{
+		max-height: 160px;
+
+		@media (min-width: $screen-sm-min) { 
+			display: block;
+			max-height: 250px;
+			.pay_off{
+				top:60px !important;
+
+				h1{
+					font-size: 60px;	
+				}
+			}
+
+		}
+
+		.pay_off{
+			display: block;
+    		color: #FFF !important;
+		    text-shadow: 2px 2px 8px rgba(41, 55, 97, .4);
+		    position: relative;
+		    top:30px;
+		    h1{
+		        font-size: 50px;
+		        margin-bottom: -10px;
+		    }
+
+		    h4{
+		    	display: none;
+			}
+
+		}
+		//
+	}
+
+	.inivitation{
+		visibility: hidden;
+	}		
+}
+
 
 			
 

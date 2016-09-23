@@ -43,7 +43,13 @@
         
           $original.keyup(function( event ) {
           //cloen the text
-          var input =  leadingText + ' ' +  $original.val();
+          var name = leadingText + ' ' +  $original.val() ;
+          console.log($original.selector);
+          if($original.selector==="input#ontvanger"){
+            name += " ,";
+          }
+          var input =  name;
+
           $target.text( input );
           //console.log(input.length);
         });
@@ -221,17 +227,14 @@
       return true;
     },  
     addEnterEvent: function( $button ) {
-
       if(!Hints.enter_enabled){
         Hints.enter_enabled = true;
         $(document).keyup(function( event ) {
-          if (event.keyCode == 13) {
+          if (event.keyCode === 13) {
              $($button.selector).trigger('click');
           }  
         });
       }
-      
-
     }
 
 
@@ -299,13 +302,6 @@
           $("html, body").scrollTop(90);
 
         });
-
-
-
-
-
-
-
 
       },
 

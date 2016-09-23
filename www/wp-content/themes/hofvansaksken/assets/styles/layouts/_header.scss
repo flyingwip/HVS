@@ -7,6 +7,9 @@
 	//image-rendering: crisp-edges;
 	//image-rendering: auto;
 	height: 70px;
+	width: 50%;
+	position: relative;
+	background-color: orange;
 	//background: url('../images/temp_logo_xs.png') no-repeat center center fixed;
 	background: url('../images/logo_hvs.svg') no-repeat 50% ;
 	background-size: cover;
@@ -203,8 +206,6 @@
      
  }
 
-
-
 .home,.hint { 
 	.hvs-header{
 		
@@ -214,7 +215,7 @@
 			display: block;
 			max-height: 250px;
 			.pay_off{
-				top:50px;
+				top:55px;
 			}
 
 		}
@@ -224,13 +225,14 @@
     		color: #FFF !important;
 		    text-shadow: 2px 2px 8px rgba(41, 55, 97, .4);
 		    position: relative;
-		    top:50px;
+		    top:30px;
 		    h1{
 		        font-size: 50px;
 		        margin-bottom: -10px;
 		    }
 
 		    h4{
+		    	
 				font-family: 'myriadpro-regular';
 				font-size: 16px;
 			}
@@ -245,7 +247,7 @@
 }
 
 
-.bedankt-a, .bedankt-b,.form { 
+.bedankt, .bedank,.form { 
 	.hvs-header{
 		max-height: 160px;
 

@@ -129,6 +129,10 @@ input[type="radio"] + label,  {
   margin-top: 5px;
  }
 
+ label{
+  padding-top: 2px!important;
+ }
+
  input[type="checkbox"] + label {
   background:url(../images/check.png);
   background-position-y : 2px;

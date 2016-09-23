@@ -2,10 +2,11 @@
 
   <a href="/">
     <header class="container-fluid logo">
+
     </header>
 </a>    
 
-<?php if( !is_front_page() && is_page('hint')!=1 && is_page('form')!=1 && is_page('bedankt-a')!=1 && is_page('bedankt-b')!=1 ): ?>  
+<?php if( !is_front_page() && is_page('hint')!=1 && is_page('form')!=1 && is_page('bedankt')!=1 && is_page('bedank')!=1 ): ?>  
   <div class="container-fluid hvs-header <?php echo $_SESSION['hint'] ; ?>">
 <?php else: ?>  
   <div class="container-fluid hvs-header">
@@ -18,7 +19,7 @@
         <div class="inivitation">
 
          <?php if ($_SESSION['ontvanger'] ): ?>
-           <label class="name ontvanger">Hallo <?php echo $_SESSION['ontvanger']; ?></label>
+           <label class="name ontvanger">Hallo <?php echo $_SESSION['ontvanger']; ?> ,</label>
         <?php else: ?>
            <label class="name ontvanger">Hallo ...</label> 
         <?php endif; ?> 
@@ -27,7 +28,7 @@
 
           <?php
           $text = array(
-            'breakfast' => 'in een ontbijt op bed...' , 
+            'breakfast' => 'in een gezond ontbijt op bed...' , 
             'fiets' => 'om lekker uit te waaien op de fiets...' , 
             'treatment' => 'in een ontspannende facial treatment...' , 
             'dinner' => "in zo'n romantisch diner voor 2..." , 

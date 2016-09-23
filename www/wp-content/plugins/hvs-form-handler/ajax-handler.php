@@ -142,9 +142,11 @@ function hvs_close_goodbye() {
 		//$result = hvs_send_email($deelnemer);
 
 		if($_REQUEST['aanbiedingen']){
-			$result = '/bedankt-a';	
+			//A
+			$result = '/bedankt';	
 		} else {
-			$result = '/bedankt-b' ;	
+			//B
+			$result = '/bedank' ;	
 		}
 
 		//remove all session variables
@@ -353,6 +355,9 @@ function hvs_send_email($deelnemer){
 	$MailChimp = new MailChimp('0cd12bbb4fb3001ec9d5058e0d1e4ea3-us2');
 
 	$list_id = '761e8922d0';
+
+	//$image = "http://www.hintshofvansaksen.nl/wp-content/uploads/generated/". $deelnemer['image_file_name'];
+	$image = "http://www.hintshofvansaksen.nl/wp-content/uploads/generated/rsz_1dummy.png";
 
 	$data = array(
 	    "FNAME" => $deelnemer['ontvanger'],

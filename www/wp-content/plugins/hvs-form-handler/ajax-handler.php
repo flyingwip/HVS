@@ -151,6 +151,7 @@ function hvs_close_goodbye() {
 
 		//remove all session variables
   		session_unset();
+  		session_destroy();
 		//wp_redirect( '/ontvanger');
 		//
 		echo $result;

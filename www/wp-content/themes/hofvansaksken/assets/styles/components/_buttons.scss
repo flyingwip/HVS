@@ -86,10 +86,14 @@ ul.share-buttons img{
 
 .cross{
     position: absolute;
-    top: -50px;
-    right: 10px;
+    top: -85px;
+    right: 32px;
     -webkit-transform: scale(.8);
     transform: scale(.6);
     z-index: 100;
     display: block;
+    width: 75px;
+    height: 75px;
+    padding-top: 21px;
+    padding-left: 21px;
 }

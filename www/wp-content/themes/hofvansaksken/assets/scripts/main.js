@@ -294,12 +294,14 @@
         Hints.checkFormValid( $(".ga-naar-email") );
         
         $( "input#ontvanger" ).focus(function() {
-           $("html, body").scrollTop(70);
+          
+           $("html, body").scrollTop(90);
            
         });
 
         $( "input#voornaam" ).focus(function() {
-          $("html, body").scrollTop(90);
+
+          $("html, body").scrollTop(160);
 
         });
 

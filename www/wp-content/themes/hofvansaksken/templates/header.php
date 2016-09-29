@@ -7,16 +7,16 @@
 </a>    
 
 <?php if( !is_front_page() && is_page('hint')!=1 && is_page('form')!=1 && is_page('bedankt')!=1 && is_page('bedank')!=1 ): ?>  
-  <div class="container-fluid hvs-header <?php echo $_SESSION['hint'] ; ?>">
+  <div class="container-fluid full-width-image <?php echo $_SESSION['hint'] ; ?>">
 <?php else: ?>  
-  <div class="container-fluid hvs-header">
+  <div class="container-fluid full-width-image">
 <?php endif; ?>
   <div class="row">
         <div class="pay_off vcenter">
           <h1 >Herfsthints</h1>   
           <h4 >Kies en win je favoriete verwenmoment</h4>
         </div>  
-        <div class="inivitation">
+        <div class="invitation">
 
          <?php if ($_SESSION['ontvanger'] ): ?>
            <label class="name ontvanger">Hallo <?php echo $_SESSION['ontvanger']; ?> ,</label>
@@ -42,9 +42,9 @@
           );
 
           $threelines = '';
-          if($_SESSION['hint']=='treatment'){
+          //if($_SESSION['hint']=='treatment' || $_SESSION['hint']=='fiets' || $_SESSION['hint']=='dinner'){
              $threelines = 'three_lines'; 
-          }
+          //}
 
           ?>
 

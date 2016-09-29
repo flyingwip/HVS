@@ -1,295 +1,341 @@
 
 
-//hide the
+//header height always 50%
+header{
+	height: 50%;
+	background-color:#FFF;
 
-.logo{
-	image-rendering: -webkit-optimize-contrast;
-	//image-rendering: crisp-edges;
-	//image-rendering: auto;
-	height: 70px;
-	width: 50%;
-	position: relative;
-	background-color: orange;
-	//background: url('../images/temp_logo_xs.png') no-repeat center center fixed;
-	background: url('../images/logo_hvs.svg') no-repeat 50% ;
-	background-size: cover;
-	background-size: 110px 55px;
-	//background: url('../images/temp_logo_xs.png') no-repeat  80px 40px;
-	@media (min-width: $screen-sm-min) { 
-		height: 100px;
-		//background: url('../images/logo_hvs.svg') no-repeat  50%;
-		background-size: 150px 75px;
-	}
-}	
-
-
-.hvs-header{
-
-	background: url('http://www.hofvansaksen.nl/~/media/images/parken/hsn/1280x430/hsn_resort_01_47212_1280x430px.jpg') no-repeat center center scroll ;
-    -webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
-    
-  	//padding: 100px 0;
-  	padding-top: 2%;
-  	padding-bottom: 2%;
-    text-align: center;
-
-    //margin-top: 60px !important;
-    margin-bottom: 20px;
-
-
-}
-
-//4 types of background 
-
-.hvs-header.fiets{
-	background: url('../images/bg_fiets.png') no-repeat center center scroll ;
-    -webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
-    
-
-}
-
-.hvs-header.breakfast{
-	background: url('../images/bg_breakfast.png') no-repeat center center scroll;
-    -webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
-    
-
-}
-
-.hvs-header.dinner{
-	background: url('../images/bg_dinner.png') no-repeat center center scroll;
-    -webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
-    
-
-}
-
-.hvs-header.treatment{
-	background: url('../images/bg_treatment.png') no-repeat center center scroll;
-    -webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
-    
-
-}
-
-//hide the header on the hints page
-.hint .hvs-header, .form .hvs-header, .actievoorwaarden .hvs-header{
-	display: none !important;
-}
-
-//show on desktop
-@media (min-width: $screen-sm-min) { 
-	.hint .hvs-header, .form .hvs-header{
-		display: block !important;
-	}
-}
-
-
-
-//rezize the header for ontvanger, emaol
-.ontvanger .hvs-header, .email .hvs-header{
-	height: 120px;
-	padding-top: 0;
-	padding-bottom: 0;
-	background-position-y : 10px;
-
-	@media (min-width: $screen-sm-min) { 
-		//background-position-y : 15px;
-    	height: 250px;
-    	background-position-y : 0px ;
-    }
-}
-
-
-//ontbijt uitwaaien treatment dinner
-.inivitation {
-
-	width: 280px;
-	height:130px;
-	margin-left: auto;
-	margin-right: auto;
-	position: relative;
-
-	/* Small devices (tablets, 768px and up) */
-	@media (min-width: $screen-sm-min) { 
-		width: 460px;
-		height:230px !important;
-		top:20px;
-
-		label{
-			left: 245px !important;
-			font-size: 22px !important;	
-		}
-
-		.ontvanger{
-			top:40px !important;
-		}
-
-		.type{
-			width: 170px !important;
-			font-size: 14px !important;
-			top:80px !important;
-		}
-
-		.afzender{
-			top:140px !important;
-			//left: 305px !important;
-		}
-	}
-
-	//ontbijt uitwaaien treatment dinner
-	label{
-		z-index: 10;
-		font-family: 'jennasue';
-		color: #FFF;
-		position: absolute;
-	    font-size: 19px;
-	    left: 150px;
-	}
-
-	//ontbijt uitwaaien treatment dinner
-	//
-	.ontvanger{
-	    top: 20px;
-	    z-index: 20;
-	}
-
-	//ontbijt uitwaaien treatment dinner
-	.type{
-		font-family: 'myriadpro-regular';
-		font-size: 11px;
-		width: 120px;
-    	text-align: left;
-    	top: 52px;
-	}
-
-	.afzender{
-	    top: 83px;
-	}
-
-
-	.three_lines{
-		top: 95px;
-	}
-
-	img{
-		max-width: 100%;
-		//width: 280px ;
-		//height:130px;
-	}
-}
-
-.pay_off{
-	display: none;
-}
-
-.hint .hvs-header{
-	 //height: 250px;
-	 
-     // .inivitation {
-     // 	display: none;
-
-     // }
-
-     
- }
-
-.home,.hint { 
-	.hvs-header{
-		
-		max-height: 180px;
-
+	.logo{
+		image-rendering: -webkit-optimize-contrast;
+		height:25%;
+		width: 50%;
+		position: relative;
+		background-color: orange;
+		background: url('../images/logo_hvs.svg') no-repeat 50% ;
+		background-size: cover;
+		background-size: 110px 55px;
 		@media (min-width: $screen-sm-min) { 
-			display: block;
-			max-height: 250px;
-			.pay_off{
-				top:55px;
-			}
+			background-size: 150px 75px;
 
 		}
+	}
 
+	.full-width-image{
+
+		height:75%;
+
+		//set the backgroud image to the header and position half logo height
+		background: url('http://www.hofvansaksen.nl/~/media/images/parken/hsn/1280x430/hsn_resort_01_47212_1280x430px.jpg') no-repeat center center scroll ;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		text-align: center;
+		//margin-top: 60px !important;
+		position: relative;
+	    
+	    //vertical align payoff
 		.pay_off{
 			display: block;
-    		color: #FFF !important;
-		    text-shadow: 2px 2px 8px rgba(41, 55, 97, .4);
-		    position: relative;
-		    top:30px;
-		    h1{
-		        font-size: 50px;
-		        margin-bottom: -10px;
-		    }
+			position: absolute;
+			top: 45%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+	    	color: #FFF !important;
+			text-shadow: 2px 2px 8px rgba(41, 55, 97, .4);
+			 h1{
+			 	font-size: 50px;
+			}
 
-		    h4{
-		    	
+			h4{
+			    //stays
 				font-family: 'myriadpro-regular';
 				font-size: 16px;
 			}
-
 		}
-		//
-	}
 
-	.inivitation{
-		visibility: hidden;
-	}		
+
+
+	    //The invitation card
+	    .invitation {
+
+			//width: 280px;
+			//height:130px;
+			width:50%;
+			top:50%;
+			left: 50%;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			
+
+
+			/* Small devices (tablets, 768px and up) */
+			@media (min-width: $screen-sm-min) { 
+				
+			}
+
+			//ontbijt uitwaaien treatment dinner
+			label{
+				position: absolute;
+				left: 54%;
+				z-index: 10;
+				font-family: 'jennasue';
+				color: #FFF;
+				//font-size: 3vmin;
+			}
+
+			//ontbijt uitwaaien treatment dinner
+			//
+			.ontvanger{
+			    top: 20%;
+			    z-index: 20;
+			    font-size: 3vmin;
+			}
+
+			//ontbijt uitwaaien treatment dinner
+			.type{
+				font-family: 'myriadpro-regular';
+				width: 28%;
+		    	text-align: left;
+		    	top: 35%;
+		    	font-size: 2vmin;	
+			}
+
+			.afzender{
+			    top: 65%;
+			    font-size: 3vmin;
+			}
+
+
+			.three_lines{
+				@media (max-width: $screen-md-min) {
+					top: 72%;
+				}
+				
+			}
+
+			img{
+				max-width: 100%;
+				//width: 280px ;
+				//height:130px;
+			}
+		}
+
+	}//end full width image
+}//end header
+
+
+
+	
+
+
+
+
+
+//DIT BLIJFT!!
+//rezize the header for ontvanger, email
+// .ontvanger .full-width-image, .email .full-width-image{
+// 	height: 120px;
+// 	padding-top: 0;
+// 	padding-bottom: 0;
+// 	background-position-y : 10px;
+
+// 	@media (min-width: $screen-sm-min) { 
+// 		//background-position-y : 15px;
+//     	height: 250px;
+//     	background-position-y : 0px ;
+//     }
+// }
+
+
+//ontbijt uitwaaien treatment dinner
+
+
+
+//PAGE TOGGLES
+.home, .hint{
+	.invitation{
+		display: none;
+	}
+}
+
+.ontvanger{
+	.pay_off{
+		display: none !important;
+	}
 }
 
 
-.bedankt, .bedank,.form { 
-	.hvs-header{
-		max-height: 160px;
+@media (max-width: $screen-xs-min) {
 
-		@media (min-width: $screen-sm-min) { 
-			display: block;
-			max-height: 250px;
-			.pay_off{
-				top:60px !important;
 
-				h1{
-					font-size: 60px;	
-				}
+	.home, .bedankt, .bedank{
+		header{
+			height: 39%;
+			//max-height: 70px;
+			.logo{
+				height: 32% ;
 			}
-
+		}
+		.wrap{
+			//margin-top: px;
+			//display: none;
 		}
 
 		.pay_off{
-			display: block;
-    		color: #FFF !important;
-		    text-shadow: 2px 2px 8px rgba(41, 55, 97, .4);
-		    position: relative;
-		    top:30px;
-		    h1{
-		        font-size: 50px;
-		        margin-bottom: -10px;
-		    }
 
-		    h4{
-		    	display: none;
+			h4{
+				display: none;
 			}
-
 		}
-		//
+
+		.invitation{
+			display: none;
+		}
 	}
 
-	.inivitation{
-		visibility: hidden;
-	}		
+	//full-width-image is hidden on hint page
+	.hint, .form{
+		//because image is hidden adjsut the header height equal to logo
+		header{
+			//height: 38%;
+			max-height: 70px;
+			.logo{
+				height: 100%;
+			}
+		}
+		//hide the image
+		.full-width-image{
+			display: none !important;
+		}
+
+		.wrap{
+			margin-top: 10px;
+		}
+
+
+	}	
+	
+	.ontvanger, .email{
+		header{
+			height: 39%;
+			//max-height: 70px;
+			.logo{
+				height: 32% ;
+			}
+		}
+
+
+		.full-width-image{
+			display: block !important;
+			height:68%;
+
+			.invitation{
+				width:90%;
+				top:50%;
+				left: 50%;
+
+				label{
+					font-size: 3vmin;
+				}
+				.ontvanger{
+					font-size: 5vmin;	
+				}
+				.type{
+					width: 40%;
+					top:40%;
+					//line-height: 120%;
+					//font-size: 2vmin;	
+				}
+				.afzender{
+					font-size: 5vmin;	
+				}
+			}
+		}
+
+		.wrap{
+			margin-top: 20px;
+			//display: none;
+		}
+
+	}
+
+	.form{
+
+		.wrap{
+			margin-top: -10px;
+		}
+
+	}
+
+
+
 }
 
 
-			
+
+
+
+
+// .home,.hint { 
+// 	.full-width-image{
+// 		//height is altijd 50%
+// 		@media (min-width: $screen-sm-min) { 
+// 			display: block;
+// 			max-height: 250px;
+// 			.pay_off{
+// 				top:55px;
+// 			}
+// 		}
+// 	}
+// }
+
+
+//adjust the background images for the different hints
+
+
+//4 types of background 
+// .full-width-image.fiets{
+// 	background: url('../images/bg_fiets.png') no-repeat center center scroll ;
+//     -webkit-background-size: cover;
+//   	-moz-background-size: cover;
+//   	-o-background-size: cover;
+//   	background-size: cover;
+    
+
+// }
+
+// .full-width-image.breakfast{
+// 	background: url('../images/bg_breakfast.png') no-repeat center center scroll;
+//     -webkit-background-size: cover;
+//   	-moz-background-size: cover;
+//   	-o-background-size: cover;
+//   	background-size: cover;
+    
+
+// }
+
+// .full-width-image.dinner{
+// 	background: url('../images/bg_dinner.png') no-repeat center center scroll;
+//     -webkit-background-size: cover;
+//   	-moz-background-size: cover;
+//   	-o-background-size: cover;
+//   	background-size: cover;
+    
+
+// }
+
+// .full-width-image.treatment{
+// 	background: url('../images/bg_treatment.png') no-repeat center center scroll;
+//     -webkit-background-size: cover;
+//   	-moz-background-size: cover;
+//   	-o-background-size: cover;
+//   	background-size: cover;
+    
+
+// }
+
+
 
 
 
